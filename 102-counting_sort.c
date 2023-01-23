@@ -1,15 +1,13 @@
 #include "sort.h"
-
 /**
- * integer_count - Number of mode of indivdual
- * integers in an array.
- *
- * @array: array to be sorted.
- * @size: size of array given.
- * @range: number of check for occurance.
- *
- * Return: number of occurence.
- */
+*integer_count- number of times integer appears in an array
+*
+*@array: array given
+*@size: size of array
+*@range: number to check for occurance
+*
+*Return: number of occurances
+*/
 int integer_count(int *array, size_t size, int range)
 {
 	int total = 0;
@@ -21,16 +19,14 @@ int integer_count(int *array, size_t size, int range)
 			total++;
 	}
 	return (total);
-
 }
 
 /**
- * count_sort - This fuction sorts a array using the
- * count sort algorithm.
- *
- * @array: the array to be sorted.
- * @size: the size of the array being counted.
- */
+*counting_sort - counting sort algorithm
+*
+*@array: array to be sorted
+*@size: size of the array
+*/
 void counting_sort(int *array, size_t size)
 {
 	int k = 0, b = 0, r = 0;
@@ -47,7 +43,7 @@ void counting_sort(int *array, size_t size)
 		}
 	}
 	array2 = malloc(sizeof(int) * (k + 1));
-	if (!array)
+	if (!array2)
 		return;
 	for (c = 0; c < ((size_t)k + 1); c++)
 	{
@@ -72,5 +68,5 @@ void counting_sort(int *array, size_t size)
 	for (i = 0; i < size; i++)
 		array[i] = newArray[i];
 	free(newArray);
-	free(newArray);
+	free(array2);
 }
